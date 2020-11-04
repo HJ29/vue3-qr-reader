@@ -1,7 +1,6 @@
 import { StreamApiNotSupportedError, InsecureContextError } from "./errors.js";
 import { imageDataFromVideo } from "./image-data.js";
-import { eventOn, timeout } from "callforth";
-import shimGetUserMedia from "./shimGetUserMedia";
+import { asyncListenEvent, sleep } from "./util.js";
 
 class Camera {
   constructor(videoEl, stream) {
@@ -79,10 +78,6 @@ export default async function(videoEl, { camera, torch }) {
     throw new StreamApiNotSupportedError();
   }
 
-  // This is a browser API only shim. It patches the global window object which
-  // is not available during SSR. So we lazily apply this shim at runtime.
-  await shimGetUserMedia();
-
   const constraints = {
     audio: false,
     video: {
@@ -106,12 +101,12 @@ export default async function(videoEl, { camera, torch }) {
     videoEl.src = stream;
   }
 
-  await eventOn(videoEl, "loadeddata");
+  await asyncListenEvent(videoEl, "loadeddata");
 
   // According to: https://oberhofer.co/mediastreamtrack-and-its-capabilities/#queryingcapabilities
   // On some devices, getCapabilities only returns a non-empty object after
   // some delay. There is no appropriate event so we have to add a constant timeout
-  await timeout(500);
+  await sleep(500);
 
   if (torch) {
     const [track] = stream.getVideoTracks();

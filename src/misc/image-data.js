@@ -1,5 +1,5 @@
 import { DropImageFetchError, DropImageDecodeError } from "./errors.js";
-import { eventOn } from "callforth";
+import { asyncListenEvent } from "./util.js";
 
 const canvas = document.createElement("canvas");
 const canvasCtx = canvas.getContext("2d");
@@ -43,7 +43,7 @@ export async function imageDataFromUrl(url) {
   const image = document.createElement("img");
   image.src = url;
 
-  await eventOn(image, "load");
+  await asyncListenEvent(image, "load");
 
   return imageDataFromImage(image);
 }
@@ -51,12 +51,9 @@ export async function imageDataFromUrl(url) {
 export async function imageDataFromFile(file) {
   if (/image.*/.test(file.type)) {
     const reader = new FileReader();
-
     reader.readAsDataURL(file);
-
-    const result = await eventOn(reader, "load");
+    const result = await asyncListenEvent(reader, "load");
     const dataURL = result.target.result;
-
     return imageDataFromUrl(dataURL);
   } else {
     throw new DropImageDecodeError();

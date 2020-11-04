@@ -1,11 +1,11 @@
-import { eventOn } from "callforth";
+import { asyncListenEvent } from "./util";
 
 export async function scan(Worker, imageData) {
   const worker = new Worker();
 
   worker.postMessage(imageData, [imageData.data.buffer]);
 
-  const event = await eventOn(worker, "message");
+  const event = await asyncListenEvent(worker, "message");
 
   worker.terminate();
 

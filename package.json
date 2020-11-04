@@ -16,7 +16,6 @@
     "url": "https://github.com/HJ29/vue3-qr-reader.git"
   },
   "files": [
-    "src",
     "dist/vue3-qr-reader.common.js"
   ],
   "license": "MIT",

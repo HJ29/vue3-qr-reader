@@ -4,6 +4,36 @@ Vue 3 qr reader.
 ### Credit to: [vue-qrcode-reader](https://github.com/gruhn/vue-qrcode-reader)
 implement with vue 3.
 
+### Install
+```bash
+yarn add vue3-qr-reader
+npm i --save vue3-qr-reader
+```
+
+### Register Global Component
+```js
+import { createApp } from 'vue';
+import App from './App.vue'
+import QrReader from 'vue3-qr-reader';
+
+const app = createApp(App);
+app.use(QrReader);
+app.mount('#app')
+```
+
+### Register Local Component
+```js
+import { QrStream, QrCapture, QrDropzone } from 'vue3-qr-reader';
+
+export default {
+  components: {
+    QrStream,
+    QrCapture,
+    QrDropzone
+  },
+};
+```
+
 ### Demo
 [Demo](https://hj29.github.io/vue3-qr-reader/)
 

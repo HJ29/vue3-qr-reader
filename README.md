@@ -1,6 +1,8 @@
 # vue3-qr-reader
-
 Vue 3 qr reader.
+
+### Credit to: [vue-qrcode-reader](https://github.com/gruhn/vue-qrcode-reader)
+implement with vue 3.
 
 ### Demo
 [Demo](https://hj29.github.io/vue3-qr-reader/)

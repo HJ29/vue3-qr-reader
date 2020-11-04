@@ -1,0 +1,50 @@
+{
+  "name": "vue3-qr-reader",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Vue 3 QR reader.",
+  "author": "hj <hjian5567@gmail.com>",
+  "main": "./dist/vue3-qr-reader.common.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service build --target lib --name vue3-qr-reader ./src/main.ts",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HJ29/vue3-qr-reader.git"
+  },
+  "files": [
+    "src",
+    "dist/vue3-qr-reader.common.js"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0-0",
+    "webrtc-adapter": "7.7.0",
+    "callforth": "^0.3.1"
+  },
+  "keywords": [
+    "vue3-qr-reader",
+    "Vue",
+    "Vue3",
+    "plugin"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0-0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "typescript": "~3.9.3",
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0-0"
+  }
+}

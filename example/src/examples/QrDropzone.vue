@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue';
-import { QrDropzone } from '../../../src/main'
+import { QrDropzone } from '../../../dist/vue3-qr-reader.common'
 
 export default defineComponent({
   name: 'QrDropzoneExample',

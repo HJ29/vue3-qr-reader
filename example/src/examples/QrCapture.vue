@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue';
-import { QrCapture } from '../../../src/main'
+import { QrCapture } from '../../../dist/vue3-qr-reader.common'
 
 export default defineComponent({
   name: 'QrCaptureExample',

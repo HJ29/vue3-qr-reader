@@ -4,7 +4,8 @@
   "private": false,
   "description": "Vue 3 QR reader.",
   "author": "hj <hjian5567@gmail.com>",
-  "main": "./dist/vue3-qr-reader.common.js",
+  "main": "dist/vue3-qr-reader.common.js",
+  "unpkg": "dist/vue3-qr-reader.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
@@ -16,13 +17,9 @@
     "url": "https://github.com/HJ29/vue3-qr-reader.git"
   },
   "files": [
-    "dist/vue3-qr-reader.common.js"
+    "dist/**.js"
   ],
   "license": "MIT",
-  "peerDependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0-0"
-  },
   "keywords": [
     "vue3-qr-reader",
     "Vue",

@@ -3,8 +3,8 @@
     <div class="mb">
       Qr Stream
     </div>
-    <div class="center">
-      <qr-stream @decode="onDecode" class="mb stream">
+    <div class="center stream">
+      <qr-stream @decode="onDecode" class="mb">
         <div style="color: red;" class="frame"></div>
       </qr-stream>
     </div>
@@ -40,8 +40,9 @@ export default defineComponent({
 
 <style scoped>
 .stream {
-  height: 300px;
-  width: 300px;
+  max-height: 500px;
+  max-width: 500px;
+  margin: auto;
 }
 .frame {
   border-style: solid;

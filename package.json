@@ -1,6 +1,6 @@
 {
   "name": "vue3-qr-reader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "Vue 3 QR reader.",
   "author": "hj <hjian5567@gmail.com>",

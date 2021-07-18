@@ -9,7 +9,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name vue3-qr-reader ./src/main.ts",
+    "build": "bash ./src/worker/build.sh && vue-cli-service build --target lib --name vue3-qr-reader ./src/main.ts",
     "publish": "npm publish --access public"
   },
   "repository": {
@@ -35,10 +35,15 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-typescript": "^5.0.2",
+    "babel-loader": "^8.2.2",
     "core-js": "^3.6.5",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
+    "microbundle": "^0.13.3",
     "typescript": "~3.9.3",
     "vue": "^3.0.0-0"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0"
   }
 }

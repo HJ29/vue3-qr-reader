@@ -11,6 +11,6 @@ export default function useCommonApi(emit) {
     }
   }
   return {
-    onDetect
-  }
+    onDetect,
+  };
 }

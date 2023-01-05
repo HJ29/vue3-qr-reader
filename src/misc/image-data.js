@@ -2,7 +2,7 @@ import { DropImageFetchError, DropImageDecodeError } from "./errors.js";
 import { asyncListenEvent } from "./util.js";
 
 const canvas = document.createElement("canvas");
-const canvasCtx = canvas.getContext("2d");
+const canvasCtx = canvas.getContext("2d", { willReadFrequently: true });
 
 canvas.width = 1920;
 canvas.height = 1080;

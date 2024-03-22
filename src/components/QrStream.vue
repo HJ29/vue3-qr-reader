@@ -281,6 +281,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       init,
+      startScanning,
     };
   },
 });
